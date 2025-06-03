@@ -1,0 +1,32 @@
+### Obtener todos los autores
+GET http://localhost:8989/api/authors
+
+### Obtener autor por ID
+GET http://localhost:8989/api/authors/1
+
+### Crear un nuevo autor
+POST http://localhost:8989/api/authors
+Content-Type: application/json
+
+{
+  "nombre": "María Pérezaaaa",
+  "email": "maria.peraaaez@example.com",
+  "imagen": "https://i.pravatar.cc/150?img=5"
+}
+
+### Obtener todos los posts
+GET http://localhost:8989/api/posts
+
+### Obtener todos los posts de un autor específico
+GET http://localhost:8989/api/posts/autor/1
+
+### Crear un nuevo post
+POST http://localhost:8989/api/posts
+Content-Type: application/json
+
+{
+  "titulo": "Cómo cuidaaar plantasxxx en interiores",
+  "descripcion": "Consejos prácticos para mantener tus plantas saludables en casa.",
+  "categoria": "jardinería",
+  "autor_id": 2
+}
