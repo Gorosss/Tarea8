@@ -9,8 +9,7 @@ app.use(cors());
 // Route configuration
 app.use('/api', require('./routes/api.routes'));
 
-
-
+require("dotenv").config();
 
 
 // 404 handler
