@@ -41,10 +41,10 @@ const selectPostsByAuthorId = async (autorId) => {
   return result;
 };
 
-const insertPost = async ({ titulo, descripcion, categoria, autor_id }) => {
+const insertPost = async ({ titulo, descripcion, categoria, autor_id, fecha_creacion }) => {
   const [result] = await db.query(
-    "INSERT INTO posts (titulo, descripcion, categoria, autor_id) VALUES (?, ?, ?, ?)",
-    [titulo, descripcion, categoria, autor_id]
+    "INSERT INTO posts (titulo, descripcion, categoria, autor_id, fecha_creacion) VALUES (?, ?, ?, ?, ?)",
+    [titulo, descripcion, categoria, autor_id, fecha_creacion]
   );
   return result;
 };

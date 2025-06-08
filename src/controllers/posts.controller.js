@@ -19,6 +19,7 @@ const selectPostsByAuthorId = async (req, res) => {
 
 const createPost = async (req, res) => {
   const { titulo, descripcion, categoria, autor_id } = req.body;
+  const fecha_creacion = new Date().toISOString().slice(0, 19).replace("T", " ");
 
   if (!titulo || !descripcion || !categoria || !autor_id) {
     return res
@@ -44,6 +45,7 @@ const createPost = async (req, res) => {
     descripcion,
     categoria,
     autor_id,
+    fecha_creacion,
   });
 
   res
