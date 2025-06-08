@@ -1,4 +1,7 @@
 ### Utilizando la Extension de REST Client de Visual Studio Code
+
+
+
 ### Obtener todos los autores
 GET http://localhost:8989/api/authors
 
@@ -26,7 +29,7 @@ POST http://localhost:8989/api/posts
 Content-Type: application/json
 
 {
-  "titulo": "Cómo cuidaaar plantasxxx en interiores",
+  "titulo": "Cómo cuidar plantas en interiores",
   "descripcion": "Consejos prácticos para mantener tus plantas saludables en casa.",
   "categoria": "jardinería",
   "autor_id": 2
