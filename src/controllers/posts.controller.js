@@ -6,6 +6,15 @@ const selectAllPosts = async (req, res) => {
   res.json(posts);
 };
 
+const getPostById = async (req, res) => {
+  const { postId } = req.params;
+  const post = await Posts.getPostById(postId);
+  if (!post) {
+    return res.status(404).json({ message: "El ID del post no existe" });
+  }
+  res.json(post);
+};
+
 const selectPostsByAuthorId = async (req, res) => {
   const { autorId } = req.params;
   const autor = await Autores.selectAuthorById(autorId);
@@ -33,7 +42,7 @@ const createPost = async (req, res) => {
   }
 
   // Verificador título no repetido
-  const postExiste = await Posts.getPostByTitle(titulo);
+  const postExiste = await Posts.checkPostTitleExists(titulo);
   if (postExiste) {
     return res
       .status(409)
@@ -53,8 +62,20 @@ const createPost = async (req, res) => {
     .json({ message: "Post creado con éxito", id: result.insertId });
 };
 
+const getPostByTitle = async (req, res) => {
+  const { titulo } = req.params;
+  const postExists = await Posts.checkPostTitleExists(titulo);
+  if (!postExists) {
+    return res.status(404).json({ message: "El título del post no existe" });
+  }
+  const post = await Posts.getPostByTitle(titulo);
+  res.json(post);
+};
+
 module.exports = {
   selectAllPosts,
+  getPostById,
   selectPostsByAuthorId,
   createPost,
+  getPostByTitle
 };

@@ -21,9 +21,6 @@ Content-Type: application/json
 ### Obtener todos los posts
 GET http://localhost:8989/api/posts
 
-### Obtener todos los posts de un autor específico
-GET http://localhost:8989/api/posts/autor/1
-
 ### Crear un nuevo post
 POST http://localhost:8989/api/posts
 Content-Type: application/json
@@ -34,3 +31,14 @@ Content-Type: application/json
   "categoria": "jardinería",
   "autor_id": 2
 }
+
+### Obtener post con id específico
+GET http://localhost:8989/api/posts/1
+
+### Obtener post con titulo específico
+GET http://localhost:8989/api/posts/titulo/Cómo%20cuidar%20plantas%20en%20interiores
+
+### Obtener todos los posts de un autor específico
+GET http://localhost:8989/api/posts/autor/1
+
+
